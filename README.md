@@ -1,51 +1,40 @@
-# 🛡️ Log-to-Blockchain SIEM with Ethereum Smart Contracts
+# Ethereum Blockchain Log Storage System
 
-This project is a simple **Security Information and Event Management (SIEM)** system that reads system logs from a file and stores them on the **Ethereum blockchain** using a **Solidity smart contract**. It uses **Python, Web3.py**, and **Ganache** as a local Ethereum testnet.
+![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
----
+A decentralized log storage system using Ethereum (Ganache) and Python for tamper-proof log management.
 
-## 🚀 Features
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. Start Ganache](#1-start-ganache)
+  - [2. Deploy the Contract](#2-deploy-the-contract)
+  - [3. Store Logs](#3-store-logs)
+  - [4. Retrieve Logs](#4-retrieve-logs)
+  - [5. Verify Logs](#5-verify-logs)
+- [Script Reference](#script-reference)
+- [Smart Contract](#smart-contract)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
-- Reads local system logs (e.g., `/home/kali/siem/system_log.txt` or `/var/log/syslog`)
-- Deploys a Solidity smart contract to store and retrieve log entries
-- Stores logs securely on the blockchain to ensure tamper-proof storage
-- Uses Ganache as a local Ethereum blockchain simulator
+## Features
+- ✔️ Store system logs on Ethereum blockchain
+- ✔️ Retrieve logs with complete history
+- ✔️ Cryptographic hash verification (SHA-256)
+- ✔️ Local development with Ganache CLI
+- ✔️ Simple Python Web3 interface
 
----
+## Prerequisites
 
-## 📦 Requirements
+### System Requirements
+- Linux OS (or WSL on Windows)
+- Python 3.8+
+- Node.js v14+
+- npm
 
-- Python 3.7+
-- Ganache (running on `http://127.0.0.1:7545`)
-- Dependencies:
-  - `web3`
-  - `py-solc-x`
-
-⚙️ How to Run the Project
-1. Start Ganache
-Make sure Ganache is installed and running on your machine.
-
-GUI: Open the Ganache desktop app and start a workspace.
-
-CLI: If you're using the CLI version, run:
-
-bash
-Copy
-Edit
-ganache-cli
-Ganache must be running on: http://127.0.0.1:7545
-
-2. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/log-to-blockchain-siem.git
-cd log-to-blockchain-siem
-3. Run the Python Script
-Make sure you're in the directory where main.py is located:
-
-bash
-Copy
-Edit
-python3 main.pypip install web3 py-solc-x
-```
+### Python Packages
+```bash
+pip install web3 py-solc-x
