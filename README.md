@@ -12,7 +12,6 @@ A secure and transparent system for storing and retrieving log files using Ether
 - [💻 Installation](#-installation)
 - [🛠️ Usage](#-usage)
 - [📂 File Structure](#-file-structure)
-- [🧠 Smart Contract](#-smart-contract)
 - [🐞 Troubleshooting](#-troubleshooting)
 - [📄 License](#-license)
 
@@ -61,6 +60,20 @@ Ensure the following dependencies are installed:
 pip install web3 py-solc-x
 ```
 
+### Node.js & npm (Linux/Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
+
+### Check Installed Versions
+
+```bash
+node -v
+npm -v
+```
+
 ### Ganache CLI (Local Blockchain)
 
 ```bash
@@ -79,30 +92,37 @@ ganache --port=7545
 
 > Open a new terminal for the next steps.
 
-### Deploy the Smart Contract
+### Step-by-Step Log Storage Workflow
 
-```bash
-source myenv/bin/activate
-python3 smartContract.py
-```
+1. **Generate Contract Address**
 
-### Store Logs
+   Run the following to deploy the smart contract:
 
-```bash
-python3 storage.py
-```
+   ```bash
+   python3 smartContract.py
+   ```
 
-### Retrieve Logs from Blockchain
+   This will output a **contract address**. Copy this address.
 
-```bash
-python3 fetch_stored_logs.py
-```
+2. **Store Scanner Logs**
 
-### Verify Log Hashes
+   Paste the generated contract address into the `storage.py` script and run:
 
-```bash
-python3 get_hashed_logs.py
-```
+   ```bash
+   python3 storage.py
+   ```
+
+   This will store your scanner logs on the blockchain.
+
+3. **Fetch Hashed Stored Logs**
+
+   Make sure the contract address is updated in `get_hashed_logs.py` and run:
+
+   ```bash
+   python3 get_hashed_logs.py
+   ```
+
+   This will fetch and display the hashed log entries from the blockchain.
 
 ---
 
@@ -118,22 +138,6 @@ python3 get_hashed_logs.py
 ├── LogStorage.sol         # Solidity smart contract
 └── README.md              # This file
 ```
-
----
-
-## 🧠 Smart Contract
-
-**`LogStorage.sol`** provides two main functionalities:
-
-```solidity
-// Store a log entry on the blockchain
-function storeLog(string memory log) public
-
-// Retrieve all stored log entries
-function getLogs() public view returns (string[] memory)
-```
-
-The smart contract ensures logs are tamper-proof and traceable on the Ethereum network.
 
 ---
 
