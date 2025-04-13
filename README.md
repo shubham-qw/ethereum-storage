@@ -106,11 +106,11 @@ ganache --port=7545
 
 2. **Store Scanner Logs**
 
-   Paste the generated contract address into the `storage.py` script and run:
+   store the contract address and script and run:
 
    ```bash
-   python3 storage.py
-   ```
+   python3 storage.py --address <contract_address>
+   ``` 
 
    This will store your scanner logs on the blockchain.
 

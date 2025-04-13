@@ -36,7 +36,7 @@ def fetch_stored_logs(contract_address, contract_abi):
 # Example Usage (replace with your contract address and ABI)
 if __name__ == "__main__":
     # Replace these with your actual contract details (from smartContract.py)
-    CONTRACT_ADDRESS = "0x02d59D928816F712078a22bD9a2DBf4AE9e48C69"  # e.g., "0x123..."
+    CONTRACT_ADDRESS = "0x6A12A548D670DF621a1F02b9b73E0c0340A96E1D"  # e.g., "0x123..."
     CONTRACT_ABI = [
         {
             "inputs": [{"internalType": "string", "name": "log", "type": "string"}],

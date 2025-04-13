@@ -42,7 +42,7 @@ def get_hashed_logs(contract_address, contract_abi):
 # Example Usage
 if __name__ == "__main__":
     # Replace these with your actual contract details
-    CONTRACT_ADDRESS = "0x02d59D928816F712078a22bD9a2DBf4AE9e48C69"  # From smartContract.py
+    CONTRACT_ADDRESS = "0x6A152046B68E393810CFB4eAfAB87206cE6146f8"  # From smartContract.py
     CONTRACT_ABI = [
         {
             "inputs": [{"internalType": "string", "name": "log", "type": "string"}],
